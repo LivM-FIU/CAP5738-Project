@@ -5,8 +5,8 @@
 \usepackage{geometry}
 \usepackage{booktabs}
 \usepackage{amsmath}
-\usepackage{hyperref}
 \geometry{margin=1in}
+\usepackage[colorlinks=true, linkcolor=blue, citecolor=blue, urlcolor=blue]{hyperref}
 
 \title{Scientific Visualization Techniques: A Mini-Survey}
 
@@ -37,7 +37,7 @@
 	\section{Survey}
 	
 	\subsection{Scalar Field Visualization}
-	Scalar fields represent data where each point in a domain is associated with a single numeric value. Effective visualization of such fields helps reveal trends, hotspots, and boundaries.
+	Scalar fields represent data where each point in a domain is associated with a single numeric value. Effective visualization of such fields helps reveal trends, hot-spots, and boundaries as shown in Figure~\ref{fig:temperature_surface}.
 	
 	One of the most basic methods is the \textbf{slice plane}, which extracts a 2D cross-section of the 3D volume. Pseudocoloring is commonly used to encode scalar values on the slice using a gradient color map.
 	
@@ -47,7 +47,15 @@
 	
 	\textbf{Scalar glyphs}, like colored disks or spheres, can be used to show value at sampled points. Though less common for dense datasets, they are helpful in sparse domains or on boundaries.
 	
-	% Graph 1 goes here
+		\vspace{4em}
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.85\textwidth]{temperature_surface_meteorology.png}
+		\caption{Simulated 3D temperature field over a geographic region, modeling how temperature varies with latitude and terrain. This graph mimics real-world meteorological data used in climate and weather simulations.}
+		\label{fig:temperature_surface}
+	\end{figure}
+	
 	
 	\vspace{1em}
 \noindent
