@@ -1,0 +1,101 @@
+\documentclass[11pt]{article}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{float}
+\usepackage{geometry}
+\usepackage{booktabs}
+\usepackage{amsmath}
+\usepackage{hyperref}
+\geometry{margin=1in}
+
+\title{Scientific Visualization Techniques: A Mini-Survey}
+
+\author{
+	Livan Miranda (6392173)\thanks{Team Leader} \and
+	Rishav Sah (6499773)
+}
+\date{\today}
+
+\begin{document}
+	
+	\maketitle
+	
+	\begin{abstract}
+		Scientific visualization transforms complex scientific data into visual formats that aid interpretation and analysis. This paper surveys the most common techniques used to visualize scalar and vector fields. We explore the strengths and limitations of each method and provide R-generated visualizations that demonstrate their use. Our findings highlight the importance of combining techniques for effective interpretation of multidimensional data.
+	\end{abstract}
+	
+	\textbf{Keywords:} Scientific Visualization, Scalar Field, Vector Field, Isosurface, Streamline, Volume Rendering
+	
+	\section{Introduction}
+	Scientific visualization is the graphical representation of data arising from scientific simulations and measurements. As datasets increase in size and complexity, visual techniques help scientists detect patterns, verify results, and communicate findings. Visualization is critical in fields such as physics, fluid dynamics, meteorology, and medicine.
+	
+	The data involved in visualization typically falls into two categories: \textbf{scalar fields}, which assign a single value (like temperature or pressure) to each point in space, and \textbf{vector fields}, which assign both magnitude and direction (like velocity or electromagnetic force).
+	
+	This mini-survey explores key methods for visualizing scalar and vector fields. We describe core techniques, illustrate them with graphs created using R, and assess their effectiveness. We also present a comparative table to evaluate strengths and limitations, and suggest best practices for combining methods.
+	
+	\section{Survey}
+	
+	\subsection{Scalar Field Visualization}
+	Scalar fields represent data where each point in a domain is associated with a single numeric value. Effective visualization of such fields helps reveal trends, hotspots, and boundaries.
+	
+	One of the most basic methods is the \textbf{slice plane}, which extracts a 2D cross-section of the 3D volume. Pseudocoloring is commonly used to encode scalar values on the slice using a gradient color map.
+	
+	The \textbf{isosurface} technique identifies all points in the domain with the same scalar value and connects them into a continuous surface. This is useful for threshold detection, such as identifying where pressure exceeds a critical value.
+	
+	\textbf{Volume rendering} displays the entire 3D domain as translucent layers, allowing scalar distributions to be viewed holistically. Proper use of opacity and lighting enables internal structures to emerge without slicing.
+	
+	\textbf{Scalar glyphs}, like colored disks or spheres, can be used to show value at sampled points. Though less common for dense datasets, they are helpful in sparse domains or on boundaries.
+	
+	% Graph 1 goes here
+	
+	\subsection{Vector Field Visualization}
+	Vector fields assign both direction and magnitude to every point in space. These fields are typically used to model flow, force, or orientation, and require techniques that show movement and structure.
+	
+	\textbf{Vector glyphs} (e.g., arrows) are the simplest way to display direction and magnitude at specific points, but they become cluttered in dense regions.
+	
+	\textbf{Streamlines} offer a cleaner representation. These are lines that follow the tangent of the vector field and give a clear sense of flow direction.
+	
+	\textbf{Streaktubes} extend streamlines into tubes with 3D shading, making them easier to interpret spatially.
+	
+	\textbf{Ribbons} provide an additional twist dimension, representing how a small neighborhood of vectors twists in space. This is useful in identifying vorticity and turbulence.
+	
+	% Graph 2 + Graph 3 go here
+	
+	\subsection{Combined Techniques}
+	To gain deeper insights, scalar and vector visualization techniques can be combined. For example, streamlines can be rendered over scalar slice planes to show how flow interacts with scalar gradients. Isosurfaces can be layered with streaktubes to reveal vector behavior near scalar thresholds.
+	
+	Coloring streamlines by scalar values—such as using temperature to shade velocity paths—adds another layer of information. Combining multiple techniques must be done carefully to avoid clutter, but when done well, it enhances understanding significantly.
+	
+	\subsection{Comparison Table}
+	
+	\begin{table}[H]
+		\centering
+		\caption{Comparison of Visualization Techniques}
+		\begin{tabular}{@{}llll@{}}
+			\toprule
+			\textbf{Technique} & \textbf{Type} & \textbf{Strength} & \textbf{Limitation} \\
+			\midrule
+			Slice Plane & Scalar & Simple, direct view & Only 2D \\
+			Isosurface & Scalar & Highlights thresholds & Hard to read when nested \\
+			Volume Rendering & Scalar & Full 3D context & Needs careful opacity tuning \\
+			Vector Glyphs & Vector & Precise direction & Gets cluttered \\
+			Streamlines & Vector & Clean flow paths & No magnitude by default \\
+			Ribbons & Vector & Shows twist/vorticity & Directional ambiguity \\
+			\bottomrule
+		\end{tabular}
+	\end{table}
+	
+	\section{Conclusion}
+	Scientific visualization techniques are essential tools for interpreting multidimensional data. Slice planes and isosurfaces are effective for scalar fields, while streamlines and ribbons reveal patterns in vector fields. Combining methods, especially when enhanced with color and transparency, offers rich insights that surpass the capabilities of any single technique. This survey highlights the value of choosing appropriate visual tools based on data type, density, and research goals.
+	
+	\section{References}
+	
+	\begin{thebibliography}{9}
+		\bibitem{hansen} Hansen, C. D., \& Johnson, C. R. (2005). \textit{The Visualization Handbook}. Elsevier.
+		\bibitem{schroeder} Schroeder, W., Martin, K., \& Lorensen, B. (2006). \textit{The Visualization Toolkit}. Kitware.
+		\bibitem{ware} Ware, C. (2020). \textit{Information Visualization: Perception for Design}. Morgan Kaufmann.
+		\bibitem{matplotlib} Hunter, J. D. (2007). Matplotlib: A 2D graphics environment. \textit{Computing in Science \& Engineering}, 9(3), 90-95.
+		\bibitem{rvis} Wickham, H. (2016). \textit{ggplot2: Elegant Graphics for Data Analysis}. Springer.
+	\end{thebibliography}
+	
+\end{document}
