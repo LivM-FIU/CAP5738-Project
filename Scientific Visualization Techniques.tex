@@ -24,7 +24,8 @@
 		Scientific visualization transforms complex scientific data into visual formats that aid interpretation and analysis. This paper surveys the most common techniques used to visualize scalar and vector fields. We explore the strengths and limitations of each method and provide R-generated visualizations that demonstrate their use. Our findings highlight the importance of combining techniques for effective interpretation of multidimensional data.
 	\end{abstract}
 	
-	\textbf{Keywords:} Scientific Visualization, Scalar Field, Vector Field, Isosurface, Streamline, Volume Rendering
+	\textbf{Keywords:} Scientific Visualization, Scalar Field Visualization, Vector Field Visualization, Slice Plane, Isosurface, Volume Rendering, Streamlines, R Graphics, Data Interpretation
+
 	
 	\section{Introduction}
 	Scientific visualization is the graphical representation of data arising from scientific simulations and measurements. As datasets increase in size and complexity, visual techniques help scientists detect patterns, verify results, and communicate findings. Visualization is critical in fields such as physics, fluid dynamics, meteorology, and medicine.
@@ -102,22 +103,65 @@ Vector field visualization helps explain system motion, direction, and interacti
 	
 	\subsection{Comparison Table}
 	
-	\begin{table}[H]
+		\begin{table}[H]
 		\centering
-		\caption{Comparison of Visualization Techniques}
-		\begin{tabular}{@{}llll@{}}
-			\toprule
-			\textbf{Technique} & \textbf{Type} & \textbf{Strength} & \textbf{Limitation} \\
-			\midrule
-			Slice Plane & Scalar & Simple, direct view & Only 2D \\
-			Isosurface & Scalar & Highlights thresholds & Hard to read when nested \\
-			Volume Rendering & Scalar & Full 3D context & Needs careful opacity tuning \\
-			Vector Glyphs & Vector & Precise direction & Gets cluttered \\
-			Streamlines & Vector & Clean flow paths & No magnitude by default \\
-			Ribbons & Vector & Shows twist/vorticity & Directional ambiguity \\
-			\bottomrule
+		\caption{Visualization Techniques: Data Type and Strength}
+		\renewcommand{\arraystretch}{1.3}
+		\begin{tabular}{|l|l|l|}
+			\hline
+			\textbf{Technique} & \textbf{Type} & \textbf{Strength} \\
+
+			Slice Plane        & Scalar        & Simple, direct view \\
+
+			Isosurface         & Scalar        & Highlights scalar thresholds \\
+
+			Volume Rendering   & Scalar        & Full 3D view with transparency \\
+
+			Scalar Glyphs      & Scalar        & Shows local values precisely \\
+
+			Vector Glyphs      & Vector        & Explicit direction + magnitude \\
+
+			Streamlines        & Vector        & Smooth, clean flow depiction \\
+
+			Streaktubes        & Vector        & Adds 3D thickness and depth \\
+
+			Ribbons            & Vector        & Shows twist and vorticity \\
+			\hline
 		\end{tabular}
 	\end{table}
+	
+	\noindent Table 1 summarizes the classification and general strength of each visualization technique.
+	
+	\vspace{3em}
+	
+	\begin{table}[H]
+		\centering
+		\caption{Visualization Techniques: Advantages and Limitations}
+		\renewcommand{\arraystretch}{1.3}
+		\begin{tabular}{|l|l|l|}
+			\hline
+			\textbf{Technique} & \textbf{Advantage} & \textbf{Limitation} \\
+
+			Slice Plane        & Great for detecting cross-sectional variation & Only 2D \\
+
+			Isosurface         & Captures 3D boundary regions effectively      & Hard to read when nested \\
+
+			Volume Rendering   & Reveals internal structures holistically     & Needs careful opacity control \\
+
+			Scalar Glyphs      & Useful in sparse or boundary data            & Cluttered in dense regions \\
+
+			Vector Glyphs      & Direct and intuitive for small datasets      & Visually cluttered in high density \\
+
+			Streamlines        & Good for path tracking in steady fields      & Doesn't show magnitude directly \\
+
+			Streaktubes        & Easier to follow in 3D space                 & More complex rendering \\
+
+			Ribbons            & Ideal for rotational fields and turbulence   & Direction can be ambiguous \\
+			\hline
+		\end{tabular}
+	\end{table}
+	
+	\noindent Table 2 evaluates the practical advantages and limitations of each method in real-world use.
 	
 	\section{Conclusion}
 	Scientific visualization techniques are essential tools for interpreting multidimensional data. Slice planes and isosurfaces are effective for scalar fields, while streamlines and ribbons reveal patterns in vector fields. Combining methods, especially when enhanced with color and transparency, offers rich insights that surpass the capabilities of any single technique. This survey highlights the value of choosing appropriate visual tools based on data type, density, and research goals.

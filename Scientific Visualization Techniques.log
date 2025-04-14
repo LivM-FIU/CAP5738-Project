@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.3) (preloaded format=pdflatex 2025.4.13)  13 APR 2025 21:45
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.3) (preloaded format=pdflatex 2025.4.13)  13 APR 2025 23:24
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -428,8 +428,15 @@ Package hyperref Info: Link coloring OFF on input line 19.
 {C:/Users/crypt/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}]
 
 [2]
+Overfull \hbox (24.42702pt too wide) in paragraph at lines 141--162
+ [][] 
+ []
 
-[3] (Scientific Visualization Techniques.aux)
+
+
+[3]
+
+[4] (Scientific Visualization Techniques.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
@@ -439,27 +446,28 @@ as not changed.
 (rerunfilecheck)             Checksum: B3D594101C0ACFC29E7879A96A63250F;1043.
  ) 
 Here is how much of TeX's memory you used:
- 11117 strings out of 473523
- 178501 string characters out of 5714630
- 583695 words of memory out of 5000000
- 34212 multiletter control sequences out of 15000+600000
- 567601 words of font info for 66 fonts, out of 8000000 for 9000
+ 11124 strings out of 473523
+ 178619 string characters out of 5714630
+ 585695 words of memory out of 5000000
+ 34216 multiletter control sequences out of 15000+600000
+ 567942 words of font info for 67 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 75i,11n,79p,555b,559s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 75i,11n,79p,555b,441s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <C:\Users\crypt\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm
-0600.pk> <C:\Users\crypt\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi60
-0\tcrm0800.pk><C:/Users/crypt/AppData/Local/Programs/MiKTeX/fonts/type1/public/
-amsfonts/cm/cmbx10.pfb><C:/Users/crypt/AppData/Local/Programs/MiKTeX/fonts/type
-1/public/amsfonts/cm/cmbx12.pfb><C:/Users/crypt/AppData/Local/Programs/MiKTeX/f
-onts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/crypt/AppData/Local/Programs/
-MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/crypt/AppData/Local/P
-rograms/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/crypt/AppData
-/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr9.pfb><C:/Users/crypt/
-AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti10.pfb>
-Output written on "Scientific Visualization Techniques.pdf" (3 pages, 124990 by
+1095.pk> <C:\Users\crypt\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi60
+0\tcrm0600.pk> <C:\Users\crypt\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec
+/dpi600\tcrm0800.pk><C:/Users/crypt/AppData/Local/Programs/MiKTeX/fonts/type1/p
+ublic/amsfonts/cm/cmbx10.pfb><C:/Users/crypt/AppData/Local/Programs/MiKTeX/font
+s/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/crypt/AppData/Local/Programs/Mi
+KTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/crypt/AppData/Local/Pro
+grams/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/crypt/AppData/L
+ocal/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/crypt/A
+ppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr9.pfb><C:/Users/
+crypt/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti10.pfb>
+Output written on "Scientific Visualization Techniques.pdf" (4 pages, 129854 by
 tes).
 PDF statistics:
- 108 PDF objects out of 1000 (max. 8388607)
- 19 named destinations out of 1000 (max. 500000)
+ 118 PDF objects out of 1000 (max. 8388607)
+ 21 named destinations out of 1000 (max. 500000)
  65 words of extra memory for PDF output out of 10000 (max. 10000000)
 
