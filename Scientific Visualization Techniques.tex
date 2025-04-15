@@ -56,21 +56,46 @@
 		\label{fig:temperature_surface}
 	\end{figure}
 	
+	\vspace{1em}
+	
+	\noindent
+	\textbf{Scenario:} \\
+	This graph models temperature variation over a geographical area. The center of the domain represents a low-altitude, warmer zone, while surrounding regions simulate cooler temperatures due to elevation or latitude effects — much like real-world climate systems.
+	
+	\vspace{0.5em}
+	\noindent
+	\textbf{Simulated Meteorological Data:} \\
+	The scalar values were generated using the following function:
+	\[
+	T(x, y) = 30 - \frac{y^2}{20} - \left|5 \cdot \cos\left(\frac{x}{3}\right) \cdot \sin\left(\frac{y}{3}\right)\right|
+	\]
+	Where:
+	\begin{itemize}
+		\item $x$ = longitude
+		\item $y$ = latitude
+	\end{itemize}
+	
+	This function creates a warmer central region (low elevation) and cooler outer regions (simulating higher elevation or polar effect). The oscillating sine-cosine term models terrain-like elevation-based temperature drops.
 	
 	\vspace{1em}
-\noindent
-\textbf{Why this technique matters:} \\
-Scientists can understand abstract numerical data with scalar field visualization. These methods turn raw data into meaningful understanding, such as tumor density in medical scans, heat zones in engines, and pressure gradients in weather systems.
-
-\vspace{0.5em}
-\noindent
-\textbf{It used in:}
-\begin{itemize}
-    \item Medical imaging (MRI, CT)
-    \item Temperature/pressure distribution fluid dynamics
-    \item Simulations of atmospheric pressure and humidity
-    \item Stress concentrations in structural engineering
-\end{itemize}
+	\noindent
+	\textbf{Relation to Scientific Visualization:} \\
+	This plot represents a fundamental example of scalar field visualization, a core concept in scientific visualization. Scalar fields appear in many real-world domains, including:
+	
+	\begin{itemize}
+	    \item Medical imaging (e.g., tissue density in CT/MRI scans)
+	    \item Meteorology (e.g., temperature or pressure maps) 
+	    \item Fluid dynamics (e.g., pressure distribution over a surface)
+	    \item Geo-science (e.g., elevation or magnetic field intensity)
+	\end{itemize}
+	
+	The use of both surface height and color to encode scalar values makes the data more interpretable. The 3D perspective adds spatial context and allows researchers to observe patterns, gradients, and critical regions in the data — which might be harder to identify in 2D views alone.
+	
+	\vspace{1em}
+	\noindent
+	\textbf{Why these techniques matters:} \\
+	Scientists can understand abstract numerical data with scalar field visualization. These methods turn raw data into meaningful understanding, such as tumor density in medical scans, heat zones in engines, and pressure gradients in weather systems.
+	
 
 	\subsection{Vector Field Visualization}
 	Vector fields assign both direction and magnitude to every point in space. These fields are typically used to model flow, force, or orientation, and require techniques that show movement and structure.
