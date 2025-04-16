@@ -14,7 +14,7 @@ df <- read_csv(url, show_col_types = FALSE) %>%
     color = colorRampPalette(c("blue", "green", "yellow", "red"))(100)[color_index]
   )
 
-# ✅ Save the plot as a PNG image
+# Save the plot as a PNG image
 png("earthquake_3d_plot_with_legend.png", width = 1200, height = 1000, res = 150)
 
 # Create the 3D scatter plot
