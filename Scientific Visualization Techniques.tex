@@ -18,100 +18,145 @@
 
 \begin{document}
 	
-	\maketitle
+\maketitle
 	
-	\begin{abstract}
-		Scientific visualization transforms complex scientific data into visual formats that aid interpretation and analysis. This paper surveys the most common techniques used to visualize scalar and vector fields. We explore the strengths and limitations of each method and provide R-generated visualizations that demonstrate their use. Our findings highlight the importance of combining techniques for effective interpretation of multidimensional data.
-	\end{abstract}
+\begin{abstract}
+	Scientific visualization transforms complex scientific data into visual formats that aid interpretation and analysis. This paper surveys the most common techniques used to visualize scalar and vector fields. We explore the strengths and limitations of each method and provide R-generated visualizations that demonstrate their use. Our findings highlight the importance of combining techniques for effective interpretation of multidimensional data.
+\end{abstract}
 	
-	\textbf{Keywords:} Scientific Visualization, Scalar Field Visualization, Vector Field Visualization, Slice Plane, Isosurface, Volume Rendering, Streamlines, R Graphics, Data Interpretation
+\textbf{Keywords:} Scientific Visualization, Scalar Field Visualization, Vector Field Visualization, Slice Plane, Isosurface, Volume Rendering, Streamlines, R Graphics, Data Interpretation
 
 	
-	\section{Introduction}
-	Scientific visualization is the graphical representation of data arising from scientific simulations and measurements. As datasets increase in size and complexity, visual techniques help scientists detect patterns, verify results, and communicate findings. Visualization is critical in fields such as physics, fluid dynamics, meteorology, and medicine.
+\section{Introduction}
+Scientific visualization is the graphical representation of data arising from scientific simulations and measurements. As datasets increase in size and complexity, visual techniques help scientists detect patterns, verify results, and communicate findings. Visualization is critical in fields such as physics, fluid dynamics, meteorology, and medicine.
 	
-	The data involved in visualization typically falls into two categories: \textbf{scalar fields}, which assign a single value (like temperature or pressure) to each point in space, and \textbf{vector fields}, which assign both magnitude and direction (like velocity or electromagnetic force).
+The data involved in visualization typically falls into two categories: \textbf{scalar fields}, which assign a single value (like temperature or pressure) to each point in space, and \textbf{vector fields}, which assign both magnitude and direction (like velocity or electromagnetic force).
 	
-	This mini-survey explores key methods for visualizing scalar and vector fields. We describe core techniques, illustrate them with graphs created using R, and assess their effectiveness. We also present a comparative table to evaluate strengths and limitations, and suggest best practices for combining methods.
+This mini-survey explores key methods for visualizing scalar and vector fields. We describe core techniques, illustrate them with graphs created using R, and assess their effectiveness. We also present a comparative table to evaluate strengths and limitations, and suggest best practices for combining methods.
 	
-	\section{Survey}
+\section{Survey}
 	
-	\subsection{Scalar Field Visualization}
-	Scalar fields represent data where each point in a domain is associated with a single numeric value. Effective visualization of such fields helps reveal trends, hot-spots, and boundaries as shown in Figure~\ref{fig:temperature_surface}.
+\subsection{Scalar Field Visualization}
+Scalar fields represent data where each point in a domain is associated with a single numeric value. Effective visualization of such fields helps reveal trends, hot-spots, and boundaries as shown in Figure~\ref{fig:temperature_surface}.
 	
-	One of the most basic methods is the \textbf{slice plane}, which extracts a 2D cross-section of the 3D volume. Pseudocoloring is commonly used to encode scalar values on the slice using a gradient color map.
+One of the most basic methods is the \textbf{slice plane}, which extracts a 2D cross-section of the 3D volume. Pseudocoloring is commonly used to encode scalar values on the slice using a gradient color map.
 	
-	The \textbf{isosurface} technique identifies all points in the domain with the same scalar value and connects them into a continuous surface. This is useful for threshold detection, such as identifying where pressure exceeds a critical value.
+The \textbf{isosurface} technique identifies all points in the domain with the same scalar value and connects them into a continuous surface. This is useful for threshold detection, such as identifying where pressure exceeds a critical value.
 	
-	\textbf{Volume rendering} displays the entire 3D domain as translucent layers, allowing scalar distributions to be viewed holistically. Proper use of opacity and lighting enables internal structures to emerge without slicing.
+\textbf{Volume rendering} displays the entire 3D domain as translucent layers, allowing scalar distributions to be viewed holistically. Proper use of opacity and lighting enables internal structures to emerge without slicing.
 	
-	\textbf{Scalar glyphs}, like colored disks or spheres, can be used to show value at sampled points. Though less common for dense datasets, they are helpful in sparse domains or on boundaries.
+\textbf{Scalar glyphs}, like colored disks or spheres, can be used to show value at sampled points. Though less common for dense datasets, they are helpful in sparse domains or on boundaries.
 	
-		\vspace{4em}
+\vspace{4em}
 	
-	\begin{figure}[H]
-		\centering
-		\includegraphics[width=0.85\textwidth]{temperature_surface_meteorology.png}
-		\caption{Simulated 3D temperature field over a geographic region, modeling how temperature varies with latitude and terrain. This graph mimics real-world meteorological data used in climate and weather simulations.}
-		\label{fig:temperature_surface}
-	\end{figure}
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.85\textwidth]{temperature_surface_meteorology.png}
+	\caption{Simulated 3D temperature field over a geographic region, modeling how temperature varies with latitude and terrain. This graph mimics real-world meteorological data used in climate and weather simulations.}
+	\label{fig:temperature_surface}
+\end{figure}
 	
-	\vspace{1em}
+\vspace{1em}
 	
-	\noindent
-	\textbf{Scenario:} \\
-	This graph models temperature variation over a geographical area. The center of the domain represents a low-altitude, warmer zone, while surrounding regions simulate cooler temperatures due to elevation or latitude effects — much like real-world climate systems.
+\noindent
+\textbf{Scenario:} \\
+This graph models temperature variation over a geographical area. The center of the domain represents a low-altitude, warmer zone, while surrounding regions simulate cooler temperatures due to elevation or latitude effects — much like real-world climate systems.
 	
-	\vspace{0.5em}
-	\noindent
-	\textbf{Simulated Meteorological Data:} \\
-	The scalar values were generated using the following function:
-	\[
+\vspace{0.5em}
+\noindent
+\textbf{Simulated Meteorological Data:} \\
+The scalar values were generated using the following function:
+\[
 	T(x, y) = 30 - \frac{y^2}{20} - \left|5 \cdot \cos\left(\frac{x}{3}\right) \cdot \sin\left(\frac{y}{3}\right)\right|
-	\]
-	Where:
-	\begin{itemize}
-		\item $x$ = longitude
-		\item $y$ = latitude
-	\end{itemize}
+\]
+Where:
+\begin{itemize}
+	\item $x$ = longitude
+	\item $y$ = latitude
+\end{itemize}
 	
-	This function creates a warmer central region (low elevation) and cooler outer regions (simulating higher elevation or polar effect). The oscillating sine-cosine term models terrain-like elevation-based temperature drops.
+This function creates a warmer central region (low elevation) and cooler outer regions (simulating higher elevation or polar effect). The oscillating sine-cosine term models terrain-like elevation-based temperature drops.
 	
-	\vspace{1em}
-	\noindent
-	\textbf{Relation to Scientific Visualization:} \\
-	This plot represents a fundamental example of scalar field visualization, a core concept in scientific visualization. Scalar fields appear in many real-world domains, including:
+\vspace{1em}
+\noindent
+\textbf{Relation to Scientific Visualization:} \\
+This plot represents a fundamental example of scalar field visualization, a core concept in scientific visualization. Scalar fields appear in many real-world domains, including:
 	
-	\begin{itemize}
-	    \item Medical imaging (e.g., tissue density in CT/MRI scans)
-	    \item Meteorology (e.g., temperature or pressure maps) 
-	    \item Fluid dynamics (e.g., pressure distribution over a surface)
-	    \item Geo-science (e.g., elevation or magnetic field intensity)
-	\end{itemize}
+\begin{itemize}
+	\item Medical imaging (e.g., tissue density in CT/MRI scans)
+	\item Meteorology (e.g., temperature or pressure maps) 
+	\item Fluid dynamics (e.g., pressure distribution over a surface)
+	\item Geo-science (e.g., elevation or magnetic field intensity)
+\end{itemize}
 	
-	The use of both surface height and color to encode scalar values makes the data more interpretable. The 3D perspective adds spatial context and allows researchers to observe patterns, gradients, and critical regions in the data — which might be harder to identify in 2D views alone.
+The use of both surface height and color to encode scalar values makes the data more interpretable. The 3D perspective adds spatial context and allows researchers to observe patterns, gradients, and critical regions in the data — which might be harder to identify in 2D views alone.
 	
-	\vspace{1em}
-	\noindent
-	\textbf{Why these techniques matters:} \\
-	Scientists can understand abstract numerical data with scalar field visualization. These methods turn raw data into meaningful understanding, such as tumor density in medical scans, heat zones in engines, and pressure gradients in weather systems.
+\vspace{1em}
+\noindent
+\textbf{Why these techniques matters:} \\
+Scientists can understand abstract numerical data with scalar field visualization. These methods turn raw data into meaningful understanding, such as tumor density in medical scans, heat zones in engines, and pressure gradients in weather systems.
 	
 
-	\subsection{Vector Field Visualization}
-	Vector fields assign both direction and magnitude to every point in space. These fields are typically used to model flow, force, or orientation, and require techniques that show movement and structure.
+\subsection{Vector Field Visualization}
+Vector fields assign both direction and magnitude to every point in space. These fields are typically used to model flow, force, or orientation, and require techniques that show movement and structure.
 	
-	\textbf{Vector glyphs} (e.g., arrows) are the simplest way to display direction and magnitude at specific points, but they become cluttered in dense regions.
+\textbf{Vector glyphs} (e.g., arrows) are the simplest way to display direction and magnitude at specific points, but they become cluttered in dense regions.
 	
-	\textbf{Streamlines} offer a cleaner representation. These are lines that follow the tangent of the vector field and give a clear sense of flow direction.
+\textbf{Streamlines} offer a cleaner representation. These are lines that follow the tangent of the vector field and give a clear sense of flow direction.
 	
-	\textbf{Streaktubes} extend streamlines into tubes with 3D shading, making them easier to interpret spatially.
+\textbf{Streaktubes} extend streamlines into tubes with 3D shading, making them easier to interpret spatially.
 	
-	\textbf{Ribbons} provide an additional twist dimension, representing how a small neighborhood of vectors twists in space. This is useful in identifying vorticity and turbulence.
+\textbf{Ribbons} provide an additional twist dimension, representing how a small neighborhood of vectors twists in space. This is useful in identifying vorticity and turbulence.
 	
-	% Graph 2 + Graph 3 go here
+% Graph 2 + Graph 3 go here
+\vspace{4em}
+	
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.75\textwidth]
+	{simulated_wind_over_region.png}
+	\caption{A simulated vector field showing wind movement over a geographic region. The arrow denotes flow direction, while the color indicates wind speed. This pattern resembles rotating air masses seen in meteorology.}
+	\label{fig:wind_vector_field}
+\end{figure}
 
+\noindent
+\textbf{Scenario:} \\
+This graph uses a rotational vector field to simulate wind movement over a square geographic region.  The arrows show wind circulating counterclockwise around the center, similar to a vortex or low-pressure system seen in meteorology.
+
+Wind speed is minimal in the middle and gradually increases as you move outward. This design mimics the natural movement of swirling air masses or eddies.
+
+\vspace{1em}
+\noindent
+\textbf{Simulated Meteorological Vector Field:} \\
+The wind vectors were generated using the following mathematical model:
+\[
+	u = -y, \quad v = x, \quad \text{Speed} = \sqrt{u^2 + v^2}
+\]
+Where:
+\begin{itemize}
+	\item $u$ = horizontal (east-west) wind component
+	\item $v$ = vertical (north-south) wind component
+	\item $x$ = longitude
+	\item $y$ = latitude
+\end{itemize}
+
+The resulting field is rotational, with each vector perpendicular to the radius from the center, forming a consistent counterclockwise flow.
+
+\vspace{1em}
+\noindent
+\textbf{Relation to Scientific Visualization:} \\
+This visualization shows a classic example of vector field representation, which is a crucial idea in scientific visualization. The arrows (vector glyphs) transmit the direction and quantity of wind at each spatial position, while the \textbf{color gradient} represents speed intensity on a perceptually uniform scale (Viridis).
+\vspace{1em}
+    
+Vector field visualizations are essential in domains such as:
+\begin{itemize}
+	\item \textbf{Meteorology} (e.g., wind flow analysis, cyclone tracking)
+	\item \textbf{Oceanography} (e.g., surface current modeling)
+	\item \textbf{Aerodynamics} (e.g., airflow over aircraft wings)
+	\item \textbf{Electromagnetism} (e.g., electric or magnetic field lines)
+\end{itemize}
 	
-	\vspace{1em}
+\vspace{1em}
 \noindent
 \textbf{Why this technique matters:} \\
 Vector field visualization helps explain system motion, direction, and interaction, such as airflow over a wing, magnetic field propagation, and turbulent ocean currents. These methods illuminate invisible forces for simulation, optimization, and design.
@@ -120,93 +165,93 @@ Vector field visualization helps explain system motion, direction, and interacti
 \noindent
 \textbf{It is used in:}
 \begin{itemize}
-    \item Airflow and turbulence simulations
-    \item A study of electromagnetic fields
-    \item Wind-current and oceanography modeling
-    \item Analysis of mechanical and biomechanical motion
-    \item Heat-transfer and combustion investigations
+	\item Airflow and turbulence simulations
+	\item A study of electromagnetic fields
+	\item Wind-current and oceanography modeling
+	\item Analysis of mechanical and biomechanical motion
+	\item Heat-transfer and combustion investigations
 \end{itemize}
 
-	\subsection{Combined Techniques}
-	To gain deeper insights, scalar and vector visualization techniques can be combined. For example, streamlines can be rendered over scalar slice planes to show how flow interacts with scalar gradients. Isosurfaces can be layered with streaktubes to reveal vector behavior near scalar thresholds.
+\subsection{Combined Techniques}
+To gain deeper insights, scalar and vector visualization techniques can be combined. For example, streamlines can be rendered over scalar slice planes to show how flow interacts with scalar gradients. Isosurfaces can be layered with streaktubes to reveal vector behavior near scalar thresholds.
 	
-	Coloring streamlines by scalar values—such as using temperature to shade velocity paths—adds another layer of information. Combining multiple techniques must be done carefully to avoid clutter, but when done well, it enhances understanding significantly.
+Coloring streamlines by scalar values—such as using temperature to shade velocity paths—adds another layer of information. Combining multiple techniques must be done carefully to avoid clutter, but when done well, it enhances understanding significantly.
 
-	This cohesive methodology is particularly advantageous in medical imaging (e.g., superimposing blood flow onto CT scans) or meteorology (e.g., integrating temperature gradients with wind vectors). Effectively constructed integrated visualizations can significantly enhance interpretability in time-critical domains such as disaster forecasting.
+This cohesive methodology is particularly advantageous in medical imaging (e.g., superimposing blood flow onto CT scans) or meteorology (e.g., integrating temperature gradients with wind vectors). Effectively constructed integrated visualizations can significantly enhance interpretability in time-critical domains such as disaster forecasting.
 	
-	\subsection{Comparison Table}
+\subsection{Comparison Table}
 	
-		\begin{table}[H]
-		\centering
-		\caption{Visualization Techniques: Data Type and Strength}
-		\renewcommand{\arraystretch}{1.3}
-		\begin{tabular}{|l|l|l|}
-			\hline
-			\textbf{Technique} & \textbf{Type} & \textbf{Strength} \\
-
-			Slice Plane        & Scalar        & Simple, direct view \\
-
-			Isosurface         & Scalar        & Highlights scalar thresholds \\
-
-			Volume Rendering   & Scalar        & Full 3D view with transparency \\
-
-			Scalar Glyphs      & Scalar        & Shows local values precisely \\
-
-			Vector Glyphs      & Vector        & Explicit direction + magnitude \\
-
-			Streamlines        & Vector        & Smooth, clean flow depiction \\
-
-			Streaktubes        & Vector        & Adds 3D thickness and depth \\
-
-			Ribbons            & Vector        & Shows twist and vorticity \\
-			\hline
-		\end{tabular}
-	\end{table}
+\begin{table}[H]
+	\centering
+	\caption{Visualization Techniques: Data Type and Strength}
+	\renewcommand{\arraystretch}{1.3}
+	\begin{tabular}{|l|l|l|}
+		\hline
+		\textbf{Technique} & \textbf{Type} & \textbf{Strength}              \\
+		
+		Slice Plane        & Scalar        & Simple, direct view            \\
+		
+		Isosurface         & Scalar        & Highlights scalar thresholds   \\
+		
+		Volume Rendering   & Scalar        & Full 3D view with transparency \\
+		
+		Scalar Glyphs      & Scalar        & Shows local values precisely   \\
+		
+		Vector Glyphs      & Vector        & Explicit direction + magnitude \\
+		
+		Streamlines        & Vector        & Smooth, clean flow depiction   \\
+		
+		Streaktubes        & Vector        & Adds 3D thickness and depth    \\
+		
+		Ribbons            & Vector        & Shows twist and vorticity      \\
+		\hline
+	\end{tabular}
+\end{table}
 	
-	\noindent Table 1 summarizes the classification and general strength of each visualization technique.
+\noindent Table 1 summarizes the classification and general strength of each visualization technique.
 	
-	\vspace{3em}
+\vspace{3em}
 	
-	\begin{table}[H]
-		\centering
-		\caption{Visualization Techniques: Advantages and Limitations}
-		\renewcommand{\arraystretch}{1.3}
-		\begin{tabular}{|l|l|l|}
-			\hline
-			\textbf{Technique} & \textbf{Advantage} & \textbf{Limitation} \\
-
-			Slice Plane        & Great for detecting cross-sectional variation & Only 2D \\
-
-			Isosurface         & Captures 3D boundary regions effectively      & Hard to read when nested \\
-
-			Volume Rendering   & Reveals internal structures holistically     & Needs careful opacity control \\
-
-			Scalar Glyphs      & Useful in sparse or boundary data            & Cluttered in dense regions \\
-
-			Vector Glyphs      & Direct and intuitive for small datasets      & Visually cluttered in high density \\
-
-			Streamlines        & Good for path tracking in steady fields      & Doesn't show magnitude directly \\
-
-			Streaktubes        & Easier to follow in 3D space                 & More complex rendering \\
-
-			Ribbons            & Ideal for rotational fields and turbulence   & Direction can be ambiguous \\
-			\hline
-		\end{tabular}
-	\end{table}
+\begin{table}[H]
+	\centering
+	\caption{Visualization Techniques: Advantages and Limitations}
+	\renewcommand{\arraystretch}{1.3}
+	\begin{tabular}{|l|l|l|}
+		\hline
+		\textbf{Technique} & \textbf{Advantage}                            & \textbf{Limitation}                \\
+		
+		Slice Plane        & Great for detecting cross-sectional variation & Only 2D                            \\
+		
+		Isosurface         & Captures 3D boundary regions effectively      & Hard to read when nested           \\
+		
+		Volume Rendering   & Reveals internal structures holistically      & Needs careful opacity control      \\
+		
+		Scalar Glyphs      & Useful in sparse or boundary data             & Cluttered in dense regions         \\
+		
+		Vector Glyphs      & Direct and intuitive for small datasets       & Visually cluttered in high density \\
+		
+		Streamlines        & Good for path tracking in steady fields       & Doesn't show magnitude directly    \\
+		
+		Streaktubes        & Easier to follow in 3D space                  & More complex rendering             \\
+		
+		Ribbons            & Ideal for rotational fields and turbulence    & Direction can be ambiguous         \\
+		\hline
+	\end{tabular}
+\end{table}
 	
-	\noindent Table 2 evaluates the practical advantages and limitations of each method in real-world use.
+\noindent Table 2 evaluates the practical advantages and limitations of each method in real-world use.
 	
-	\section{Conclusion}
-	Scientific visualization techniques are essential tools for interpreting multidimensional data. Slice planes and isosurfaces are effective for scalar fields, while streamlines and ribbons reveal patterns in vector fields. Combining methods, especially when enhanced with color and transparency, offers rich insights that surpass the capabilities of any single technique. This survey highlights the value of choosing appropriate visual tools based on data type, density, and research goals.
+\section{Conclusion}
+Scientific visualization techniques are essential tools for interpreting multidimensional data. Slice planes and isosurfaces are effective for scalar fields, while streamlines and ribbons reveal patterns in vector fields. Combining methods, especially when enhanced with color and transparency, offers rich insights that surpass the capabilities of any single technique. This survey highlights the value of choosing appropriate visual tools based on data type, density, and research goals.
 	
-	\section{References}
+\section{References}
 	
-	\begin{thebibliography}{9}
-		\bibitem{hansen} Hansen, C. D., \& Johnson, C. R. (2005). \textit{The Visualization Handbook}. Elsevier.
-		\bibitem{schroeder} Schroeder, W., Martin, K., \& Lorensen, B. (2006). \textit{The Visualization Toolkit}. Kitware.
-		\bibitem{ware} Ware, C. (2020). \textit{Information Visualization: Perception for Design}. Morgan Kaufmann.
-		\bibitem{matplotlib} Hunter, J. D. (2007). Matplotlib: A 2D graphics environment. \textit{Computing in Science \& Engineering}, 9(3), 90-95.
-		\bibitem{rvis} Wickham, H. (2016). \textit{ggplot2: Elegant Graphics for Data Analysis}. Springer.
-	\end{thebibliography}
+\begin{thebibliography}{9}
+	\bibitem{hansen} Hansen, C. D., \& Johnson, C. R. (2005). \textit{The Visualization Handbook}. Elsevier.
+	\bibitem{schroeder} Schroeder, W., Martin, K., \& Lorensen, B. (2006). \textit{The Visualization Toolkit}. Kitware.
+	\bibitem{ware} Ware, C. (2020). \textit{Information Visualization: Perception for Design}. Morgan Kaufmann.
+	\bibitem{matplotlib} Hunter, J. D. (2007). Matplotlib: A 2D graphics environment. \textit{Computing in Science \& Engineering}, 9(3), 90-95.
+	\bibitem{rvis} Wickham, H. (2016). \textit{ggplot2: Elegant Graphics for Data Analysis}. Springer.
+\end{thebibliography}
 	
 \end{document}
