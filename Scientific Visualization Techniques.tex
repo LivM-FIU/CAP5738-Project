@@ -109,7 +109,6 @@
 	\textbf{Ribbons} provide an additional twist dimension, representing how a small neighborhood of vectors twists in space. This is useful in identifying vorticity and turbulence.
 	
 	% Graph 2 + Graph 3 go here
-
 	
 	\vspace{1em}
 \noindent
@@ -132,9 +131,32 @@ Vector field visualization helps explain system motion, direction, and interacti
 	
 	Coloring streamlines by scalar values—such as using temperature to shade velocity paths—adds another layer of information. Combining multiple techniques must be done carefully to avoid clutter, but when done well, it enhances understanding significantly.
 
-	This cohesive methodology is particularly advantageous in medical imaging (e.g., superimposing blood flow onto CT scans) or meteorology (e.g., integrating temperature gradients with wind vectors). Effectively constructed integrated visualizations can significantly enhance interpretability in time-critical domains such as disaster forecasting.
+	This cohesive methodology is particularly advantageous in medical imaging (e.g., superimposing blood flow onto CT scans) or meteorology (e.g., integrating temperature gradients with wind vectors). Effectively constructed integrated visualizations can significantly enhance interpretability in time-critical domains such as disaster forecasting as shown in Figure~\ref{fig:earthquake_3d}.
 	
-	\subsection{Comparison Table}
+		\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.95\textwidth]{earthquake_3d_plot_with_legend.png}
+		\caption{3D scatter plot of global earthquake locations from the past 30 days. Depth is inverted for clarity. Color represents magnitude from low (blue) to high (red).}
+		\label{fig:earthquake_3d}
+	\end{figure}
+	
+	\vspace{1em}
+	\noindent
+	\textbf{Scenario: Real-World Seismic Event Data} \\
+	This graph presents a real-world scientific visualization of spatial earthquake data, obtained from the USGS earthquake feed. Each point represents an earthquake, plotted by its longitude, latitude, and depth. The depth axis is inverted to reflect how earthquakes occur beneath Earth's surface. Color encodes scalar values (magnitude), transitioning from blue (low magnitude) to red (high magnitude).
+	
+	\vspace{0.5em}
+	\noindent
+	\textbf{Relation to Scientific Visualization} \\
+	This plot illustrates a combined visualization approach, integrating both scalar and spatial vector information in one 3D scatter plot. It highlights how scalar data (magnitude) can be layered into positional 3D spatial domains. This kind of visualization is essential in geoscience and hazard monitoring, where both position and intensity influence understanding.
+	
+	\vspace{0.5em}
+	\noindent
+	\textbf{Why combining this techniques matters} \\
+	By visually encoding magnitude through color and preserving geographic position and depth in 3D space, this approach allows researchers to analyze trends in earthquake clustering, depth zones, and magnitude distribution. Compared to traditional 2D maps, this 3D representation better reflects the spatial dynamics of seismic activity, supporting both qualitative insight and quantitative analysis.
+	
+	
+	\subsection{Comparison Tables}
 	
 		\begin{table}[H]
 		\centering
@@ -207,6 +229,9 @@ Vector field visualization helps explain system motion, direction, and interacti
 		\bibitem{ware} Ware, C. (2020). \textit{Information Visualization: Perception for Design}. Morgan Kaufmann.
 		\bibitem{matplotlib} Hunter, J. D. (2007). Matplotlib: A 2D graphics environment. \textit{Computing in Science \& Engineering}, 9(3), 90-95.
 		\bibitem{rvis} Wickham, H. (2016). \textit{ggplot2: Elegant Graphics for Data Analysis}. Springer.
+		\bibitem{usgsdata}
+		U.S. Geological Survey (USGS). Earthquake Catalog Data Feed. \url{https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_month.csv}. Accessed April 13, 2025.
+		
 	\end{thebibliography}
 	
 \end{document}
