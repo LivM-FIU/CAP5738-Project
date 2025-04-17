@@ -15,6 +15,7 @@
 	Rishav Sah (6499773)
 }
 \date{\today}
+\vspace{3em}
 
 \begin{document}
 	
@@ -108,11 +109,44 @@
 	
 	\textbf{Ribbons} provide an additional twist dimension, representing how a small neighborhood of vectors twists in space. This is useful in identifying vorticity and turbulence.
 	
-	% Graph 2 + Graph 3 go here
+	\vspace{1em}
+	\noindent
+	\textbf{Real-World Integration:} \\
+	To demonstrate the application of vector field visualization with real-world data, we used wind speed data from the Open-Meteo API focused on the Miami region. The average wind value was used to simulate vertical lift, combined with a rotating horizontal field to mimic convection or vortex-like wind behavior. This resulted in 3D streamlines that visualize how directional wind flows propagate through space.
+	
+	Each streamline originates from a seed grid near the ground and is extended iteratively by calculating vector direction at each point. By using \texttt{rgl} in R, the field is visualized from three different angles (Figure~\ref{fig:wind_streamlines_1}–\ref{fig:wind_streamlines_3}) to better understand the vector dynamics.
+	
+	\vspace{1em}
+	\textbf{Relation to Scientific Visualization:} \\
+	This technique models and visualizes dynamic motion fields—commonly used in meteorology, fluid mechanics, and environmental modeling. It enhances interpretation of complex vector data by converting magnitude and direction into visual cues like curvature, density, and 3D orientation.
+	
+	\vspace{0.5em}
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.85\textwidth]{vortex_view1.png}
+		\caption{Real wind-based simulated 3D streamlines (View 1). Directional field based on windspeed data over Miami, showing upward and rotational flow structure.}
+		\label{fig:wind_streamlines_1}
+	\end{figure}
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.85\textwidth]{vortex_view2.png}
+		\caption{Alternate perspective (View 2) of the same wind-driven vector field. The structure illustrates flow curvature and 3D depth.}
+		\label{fig:wind_streamlines_2}
+	\end{figure}
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.85\textwidth]{vortex_view3.png}
+		\caption{Lower-altitude view (View 3) emphasizing how horizontal wind direction evolves into vertical motion.}
+		\label{fig:wind_streamlines_3}
+	\end{figure}
+	
 	
 	\vspace{1em}
 \noindent
-\textbf{Why this technique matters:} \\
+\textbf{Why this techniques matters:} \\
 Vector field visualization helps explain system motion, direction, and interaction, such as airflow over a wing, magnetic field propagation, and turbulent ocean currents. These methods illuminate invisible forces for simulation, optimization, and design.
 
 \vspace{0.5em}
@@ -231,6 +265,7 @@ Vector field visualization helps explain system motion, direction, and interacti
 		\bibitem{rvis} Wickham, H. (2016). \textit{ggplot2: Elegant Graphics for Data Analysis}. Springer.
 		\bibitem{usgsdata}
 		U.S. Geological Survey (USGS). Earthquake Catalog Data Feed. \url{https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_month.csv}. Accessed April 13, 2025.
+		\bibitem{openmeteo} Open-Meteo API. \url{https://open-meteo.com/}
 		
 	\end{thebibliography}
 	

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.3) (preloaded format=pdflatex 2025.4.13)  16 APR 2025 19:23
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.3) (preloaded format=pdflatex 2025.4.13)  16 APR 2025 22:59
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -333,24 +333,24 @@ File: l3backend-pdftex.def 2024-05-08 L3 backend support: PDF output (pdfTeX)
 ) (Scientific Visualization Techniques.aux)
 \openout1 = `"Scientific Visualization Techniques.aux"'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 19.
-LaTeX Font Info:    ... okay on input line 19.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 19.
-LaTeX Font Info:    ... okay on input line 19.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 19.
-LaTeX Font Info:    ... okay on input line 19.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 19.
-LaTeX Font Info:    ... okay on input line 19.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 19.
-LaTeX Font Info:    ... okay on input line 19.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 19.
-LaTeX Font Info:    ... okay on input line 19.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 19.
-LaTeX Font Info:    ... okay on input line 19.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 19.
-LaTeX Font Info:    ... okay on input line 19.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 19.
-LaTeX Font Info:    ... okay on input line 19.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 20.
+LaTeX Font Info:    ... okay on input line 20.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 20.
+LaTeX Font Info:    ... okay on input line 20.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 20.
+LaTeX Font Info:    ... okay on input line 20.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 20.
+LaTeX Font Info:    ... okay on input line 20.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 20.
+LaTeX Font Info:    ... okay on input line 20.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 20.
+LaTeX Font Info:    ... okay on input line 20.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 20.
+LaTeX Font Info:    ... okay on input line 20.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 20.
+LaTeX Font Info:    ... okay on input line 20.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 20.
+LaTeX Font Info:    ... okay on input line 20.
 
 (C:\Users\crypt\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pdf.mk
 ii
@@ -425,7 +425,7 @@ File: color.cfg 2016/01/02 v1.6 sample color configuration
 Package color Info: Driver file: pdftex.def on input line 149.
 (C:\Users\crypt\AppData\Local\Programs\MiKTeX\tex/latex/graphics\mathcolor.ltx)
 )
-Package hyperref Info: Link coloring ON on input line 19.
+Package hyperref Info: Link coloring ON on input line 20.
  (Scientific Visualization Techniques.out)
 (Scientific Visualization Techniques.out)
 \@outlinefile=\write3
@@ -440,33 +440,54 @@ Package hyperref Info: Link coloring ON on input line 19.
 File: temperature_surface_meteorology.png Graphic file (type png)
 <use temperature_surface_meteorology.png>
 Package pdftex.def Info: temperature_surface_meteorology.png  used on input lin
-e 54.
+e 55.
 (pdftex.def)             Requested size: 399.29463pt x 299.46278pt.
 
 
 [2 <./temperature_surface_meteorology.png (PNG copy)>]
 
 [3]
-<earthquake_3d_plot_with_legend.png, id=65, 578.16pt x 481.8pt>
+<vortex_view1.png, id=66, 1931.215pt x 1064.97874pt>
+File: vortex_view1.png Graphic file (type png)
+<use vortex_view1.png>
+Package pdftex.def Info: vortex_view1.png  used on input line 127.
+(pdftex.def)             Requested size: 399.29463pt x 220.19083pt.
+<vortex_view2.png, id=67, 1931.215pt x 1064.97874pt>
+File: vortex_view2.png Graphic file (type png)
+<use vortex_view2.png>
+Package pdftex.def Info: vortex_view2.png  used on input line 134.
+(pdftex.def)             Requested size: 399.29463pt x 220.19083pt.
+
+
+[4 <./vortex_view1.png (PNG copy)>]
+<vortex_view3.png, id=75, 1931.215pt x 1064.97874pt>
+File: vortex_view3.png Graphic file (type png)
+<use vortex_view3.png>
+Package pdftex.def Info: vortex_view3.png  used on input line 141.
+(pdftex.def)             Requested size: 399.29463pt x 220.19083pt.
+
+
+[5 <./vortex_view2.png (PNG copy)> <./vortex_view3.png (PNG copy)>]
+<earthquake_3d_plot_with_legend.png, id=82, 578.16pt x 481.8pt>
 File: earthquake_3d_plot_with_legend.png Graphic file (type png)
 <use earthquake_3d_plot_with_legend.png>
 Package pdftex.def Info: earthquake_3d_plot_with_legend.png  used on input line
- 138.
+ 172.
 (pdftex.def)             Requested size: 446.26582pt x 371.88403pt.
 
 
-[4]
+[6]
 
-[5 <./earthquake_3d_plot_with_legend.png>]
-Overfull \hbox (24.42702pt too wide) in paragraph at lines 196--217
+[7 <./earthquake_3d_plot_with_legend.png>]
+Overfull \hbox (24.42702pt too wide) in paragraph at lines 230--251
  [][] 
  []
 
 
 
-[6]
+[8]
 
-[7] (Scientific Visualization Techniques.aux)
+[9] (Scientific Visualization Techniques.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
@@ -476,10 +497,10 @@ as not changed.
 (rerunfilecheck)             Checksum: 5B4B8A5D87DF4FCBC34685D16FEA87C0;1048.
  ) 
 Here is how much of TeX's memory you used:
- 11228 strings out of 473523
- 180983 string characters out of 5714630
- 586267 words of memory out of 5000000
- 34306 multiletter control sequences out of 15000+600000
+ 11259 strings out of 473523
+ 181620 string characters out of 5714630
+ 586758 words of memory out of 5000000
+ 34331 multiletter control sequences out of 15000+600000
  568110 words of font info for 68 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  75i,11n,79p,555b,560s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -500,10 +521,10 @@ ts/cm/cmr9.pfb><C:/Users/crypt/AppData/Local/Programs/MiKTeX/fonts/type1/public
 /amsfonts/cm/cmsy10.pfb><C:/Users/crypt/AppData/Local/Programs/MiKTeX/fonts/typ
 e1/public/amsfonts/cm/cmti10.pfb><C:/Users/crypt/AppData/Local/Programs/MiKTeX/
 fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on "Scientific Visualization Techniques.pdf" (7 pages, 338960 by
+Output written on "Scientific Visualization Techniques.pdf" (9 pages, 531327 by
 tes).
 PDF statistics:
- 168 PDF objects out of 1000 (max. 8388607)
- 27 named destinations out of 1000 (max. 500000)
- 75 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 187 PDF objects out of 1000 (max. 8388607)
+ 33 named destinations out of 1000 (max. 500000)
+ 90 words of extra memory for PDF output out of 10000 (max. 10000000)
 
